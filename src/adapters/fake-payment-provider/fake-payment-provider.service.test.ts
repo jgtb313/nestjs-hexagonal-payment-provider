@@ -79,7 +79,7 @@ describe('FakePaymentProviderService', () => {
         'http://fake-payment-provider.com/init-payment',
         {
           product_id: '1dfd4343-3fc1-4dcd-b0ba-47df4962e77a',
-          payment_method: 'CREDIT_CARD',
+          payment_method: 'credit-card',
           money: {
             currency: 'BRL',
             amount: 100,

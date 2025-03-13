@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { HttpService } from '@nestjs/axios';
 import { lastValueFrom } from 'rxjs';
 
-import { PaymentStatusEnum } from '@/support/schema';
+import { PaymentMethodEnum, PaymentStatusEnum } from '@/support/schema';
 import { IPaymentProvider, PaymentProviderError } from '@/ports/payment-provider';
 
 type FakePaymentProviderStatus = 'pending' | 'processed' | 'canceled';
@@ -41,7 +41,7 @@ export class FakePaymentProviderService implements IPaymentProvider {
   initPayment: IPaymentProvider['initPayment'] = async ({ productId, method, currency, amount }) => {
     const input: FakePaymentProviderInitPaymentInput = {
       product_id: productId,
-      payment_method: method,
+      payment_method: this.parsePaymentMethod(method),
       money: {
         currency,
         amount,
@@ -98,6 +98,17 @@ export class FakePaymentProviderService implements IPaymentProvider {
       throw error;
     }
   };
+
+  private parsePaymentMethod(status: string) {
+    const mapping: Record<PaymentMethodEnum, string> = {
+      PAYPAL: 'pay-pal',
+      CREDIT_CARD: 'credit-card',
+      PIX: 'pix',
+      BOLETO: 'boleto',
+    };
+
+    return mapping[status];
+  }
 
   private parseStatus(status: string) {
     const mapping: Record<FakePaymentProviderStatus, PaymentStatusEnum> = {
