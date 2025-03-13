@@ -36,7 +36,11 @@ A Splitwave API é uma aplicação RESTful projetada para gerenciar solicitaçõ
    ```bash
    cp .env.example .env
    ```
-4. Inicie a aplicação:
+4. Inicia os containers Docker necessários:
+   ```bash
+   yarn docker
+   ```
+5. Inicie a aplicação:
    ```bash
    yarn start
    ```
