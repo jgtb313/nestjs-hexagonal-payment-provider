@@ -71,3 +71,4 @@ A Splitwave API é uma aplicação RESTful projetada para gerenciar solicitaçõ
 - O PaymentService pode receber outros providers e adotar um strategy pattern pra escolher qual usar, dependendo de alguma regra de negócio.
 - A arquitetura hexagonal separa bem a parte de implementação concreta (adapters), abstrações (ports) e o core (regras de negócio) simplificando a manutenção e entedimento de cada parte da aplicacão.
 - Cada PaymentProvider deve tratar seus erros de acordo com o gateway, e o PaymentService aplica regra de negócio de acordo com o erro.
+- O status não é salvo no banco de dados pois, nessa implementação, não temos sincronização com o gateway. O ideal seria ter algo como webhook pra atualizar automaticamente, sendo assim não precisaríamos ficar batendo no gateway para consultar o status atual.
