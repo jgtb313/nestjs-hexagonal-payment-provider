@@ -23,8 +23,8 @@ Aplicação RESTful projetada para gerenciar solicitações de pagamento, oferec
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/jgtb313/splitwave-api.git
-   cd splitwave-api
+   git clone https://github.com/jgtb313/nestjs-hexagonal-payment-provider.git
+   cd nestjs-hexagonal-payment-provider
    ```
 2. Instale as dependências:
    ```bash
