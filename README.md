@@ -1,10 +1,8 @@
-![Alt text](https://splitwave.com.br/favicon.ico)
-
-# Splitwave API
+# nestjs-hexagonal-payment-provider
 
 ## Visão Geral
 
-A Splitwave API é uma aplicação RESTful projetada para gerenciar solicitações de pagamento, oferece uma interface simples para criar e recuperar informações de pagamentos.
+Aplicação RESTful projetada para gerenciar solicitações de pagamento, oferece uma interface simples para criar e recuperar informações de pagamentos.
 
 ### Funcionalidades
 
